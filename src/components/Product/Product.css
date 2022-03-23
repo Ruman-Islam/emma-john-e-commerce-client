@@ -1,0 +1,38 @@
+.card {
+    width: 350px;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    /* object-fit: contain; */
+}
+
+.add-to-cart {
+    width: 100%;
+    background-color: #FFE0B3 !important;
+    color: black !important;
+    font-weight: 700 !important;
+    border: 0;
+    border-radius: 0 0 10px 10px;
+    padding: 10px 0;
+}
+
+.add-to-cart:hover {
+    background-color: orange !important;
+    transition: .5s;
+}
+
+.icon {
+    margin-left: 10px;
+}
+
+small {
+    display: block;
+}
+
+@media screen and (max-width: 1100px) {
+    .card {
+        width: 285px;
+    }
+}
