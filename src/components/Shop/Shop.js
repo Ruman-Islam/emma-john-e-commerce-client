@@ -46,7 +46,7 @@ const Shop = ({ setItemsCount }) => {
     }, [products])
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('https://raw.githubusercontent.com/Ruman-Islam/emma-john-e-commerce/main/public/products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
