@@ -9,8 +9,8 @@ const Cart = ({ cart, handleDeleteCart, setItemsCount }) => {
     let quantity = 0;
     for (const product of cart) {
         quantity += product.quantity;
-        totalPrice += product.price * quantity;
-        totalShippingCost += product.shipping * quantity;
+        totalPrice += product.price * product.quantity;
+        totalShippingCost += product.shipping * product.quantity;
     }
     const tax = parseFloat((totalPrice * 0.1).toFixed(2));
     const grandTotal = totalPrice + totalShippingCost + tax;
