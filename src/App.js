@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Shop from "./components/Shop/Shop";
 import Orders from './components/Orders/Orders';
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Inventory from "./components/Inventory/Inventory";
 import About from "./components/About/About";
 
@@ -19,7 +19,7 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/about" element={<About />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

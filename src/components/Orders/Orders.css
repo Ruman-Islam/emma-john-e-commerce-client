@@ -1,8 +1,11 @@
-.foot {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    padding: 405px 0;
+.main-container{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin-top: 200px;
 }
-/* flex justify-center items-center w-full py-44 */
+
+.cart-detail-container {
+    background-color: #FFE0B3;
+    padding: 20px;
+    border-radius: 10px;
+}

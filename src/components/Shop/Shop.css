@@ -34,7 +34,7 @@
 .clear-btn, .review-btn {
     display: block;
     margin: 16px 0;
-    width: 100%;
+    width: 300px;
     border: 0;
     padding: 10px 0;
     border-radius: 5px;
@@ -83,5 +83,4 @@
     .offCanvas {
         display: block;
     }
-  
 }

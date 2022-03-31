@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
-import { addToLocalStorage, deleteShoppingCart } from '../../utilities/utilitiesFunctions';
+import { addToLocalStorage } from '../../utilities/utilitiesFunctions';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
@@ -26,12 +26,6 @@ const Shop = ({ setItemsCount }) => {
         addToLocalStorage(selectedProduct.id);
     };
 
-    const handleDeleteCart = () => {
-        const emptyCart = [];
-        setCart(emptyCart);
-        deleteShoppingCart();
-    }
-
     return (
         <div className='shop-container'>
             <div className="product-container container">
@@ -44,10 +38,7 @@ const Shop = ({ setItemsCount }) => {
                 }
             </div>
             <div className="cart-container">
-                <Cart cart={cart}
-                    handleDeleteCart={handleDeleteCart}
-                    setItemsCount={setItemsCount}
-                />
+                <Cart setItemsCount={setItemsCount} />
             </div>
             <div className="offCanvas">
                 <div className="offcanvas offcanvas-start w-100" tabIndex="1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
@@ -56,10 +47,7 @@ const Shop = ({ setItemsCount }) => {
                         <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className="offcanvas-body">
-                        <Cart cart={cart}
-                            handleDeleteCart={handleDeleteCart}
-                            setItemsCount={setItemsCount}
-                        />
+                        <Cart setItemsCount={setItemsCount} />
                     </div>
                 </div>
             </div>
