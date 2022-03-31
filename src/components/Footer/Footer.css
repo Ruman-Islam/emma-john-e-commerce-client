@@ -3,7 +3,6 @@ footer {
     display: flex;
     background-color: skyblue;
     padding: 20px 0;
-    margin-top: 10px;
     height: 200px;
     align-items: center;
 }
