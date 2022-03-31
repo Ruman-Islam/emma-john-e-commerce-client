@@ -1,0 +1,30 @@
+.cart-item {
+    width: 60%;
+    height: 100px;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.item-img-container {
+    width: 20%;
+}
+
+.item-detail-container {
+   width: 60%;
+}
+
+.remove-item-btn-container {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    color: #D20303;
+}
+.cart-item .item-img-container img {
+    height: 100px;
+}
+
+
+.detail-title {
+    margin: 0;
+}

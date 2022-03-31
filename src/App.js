@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Shop setItemsCount={setItemsCount} />} />
         <Route path="/shop" element={<Shop setItemsCount={setItemsCount} />} />
-        <Route path="/orders" element={<Orders />} />
+        <Route path="/orders" element={<Orders setItemsCount={setItemsCount} />} />
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/about" element={<About />} />
       </Routes>

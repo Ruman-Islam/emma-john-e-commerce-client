@@ -3,12 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import './Cart.css';
 import { handleDeleteCart } from '../../utilities/utilitiesFunctions';
-import useCart from '../../hooks/useCart';
-import useProducts from '../../hooks/useProducts';
 
-const Cart = ({ setItemsCount }) => {
-    const [products] = useProducts();
-    const [cart, setCart] = useCart(products);
+const Cart = ({ setItemsCount, cart, setCart }) => {
 
     let totalPrice = 0;
     let totalShippingCost = 0;
@@ -20,7 +16,7 @@ const Cart = ({ setItemsCount }) => {
     }
     const tax = parseFloat((totalPrice * 0.1).toFixed(2));
     const grandTotal = totalPrice + totalShippingCost + tax;
-    // setItemsCount(quantity);
+    setItemsCount(quantity);
     return (
         <div className='cart'>
             <h4>Order Summary</h4>
