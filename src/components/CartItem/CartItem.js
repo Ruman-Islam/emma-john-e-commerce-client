@@ -11,7 +11,7 @@ const CartItem = ({ handleRemoveFromCart, product, product: { name, price, shipp
                 <img src={img} alt="" />
             </div>
             <div className='item-detail-container'>
-                <h6 title={name} className='detail-title'>{name.length > 10 ? name.slice(2, 20) + '...' : name}</h6>
+                <h6 title={name} className='detail-title'>{name.length > 10 ? name.slice(0, 20) + '...' : name}</h6>
                 <p className='detail-title'>Price: $ {price}</p>
                 <p className='detail-title'>Shipping Cost: $ {shipping}</p>
                 <p className='detail-title'>Quantity: {quantity}</p>
