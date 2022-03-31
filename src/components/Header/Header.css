@@ -1,81 +1,67 @@
-/* .nav-link {
-    font-size: 18px;
-    margin-left: 10px;
-}
-.nav-link:hover {
-    color: orange !important;
-}
-.cart-icon {
-    color: orange !important;
-}
-.navbar-toggler {
-    color: orange !important;
-}
-img {
-    width: 180px;
-}
-svg {
-    width: 25px;
-}
-sup {
-    font-size: 16px;
-} */
-
 nav {
     display: flex;
     justify-content: space-around;
     height: 80px;
     align-items: center;
     background-color: #1C2B35;;
-  }
-  .navigations {
-    display: flex;
-  }
-  .navigations a {
-    color: aliceblue;
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 600;
-    margin-right: 18px;
-  }
-  #toggler {
-    display: none;
-  }
-  .nav-toggler-icon {
-    display: none;
-    color: orange;
-  }
-  .cart-btn {
-    color: orange;
 }
 
-  @media (max-width: 1280px) {
-      nav .navigations a {
-        margin-right: 0;
-        margin-bottom: 10px;
-        color: #fff;
-      }
-      nav .nav-toggler-icon {
-        display: block;
-      }
-      .navigations {
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        width: 100%;
-        padding: 15px 0;
-        background-color: #1C2B35;
-        transform: scale(0.5) translateY(-450px);
-        transition: 0.5s ease-in-out;
-        opacity: 0;
-        z-index: 5;
+.navigations {
+    display: flex;
+}
 
-      }
-      #toggler:checked ~ .navigations {
-        transform: scale(1) translateY(0);
-        transition: 0.5s ease-in-out;
-        opacity: 1;
-      }
+.navigations a {
+  color: aliceblue;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 600;
+  margin-right: 18px;
+}
+
+.navigations a:hover {
+  color: orange !important;
+}
+
+#toggler {
+  display: none;
+}
+
+.nav-toggler-icon {
+  display: none;
+  color: orange;
+}
+
+.cart-btn {
+  color: orange;
+}
+
+@media (max-width: 1280px) {
+  nav .navigations a {
+    margin-right: 0;
+    margin-bottom: 10px;
+    color: #fff;
   }
+  nav .nav-toggler-icon {
+    display: block;
+  }
+.navigations {
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 78px;
+  left: 0;
+  width: 100%;
+  padding: 15px 0;
+  background-color: #1C2B35;
+  transform: scale(0.5) translateY(-450px);
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 5;
+
+ }
+ #toggler:checked ~ .navigations {
+  transform: scale(1) translateY(0);
+  transition: 0.5s ease-in-out;
+  opacity: 1;
+ }
+}

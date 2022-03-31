@@ -6,6 +6,7 @@ import logo from '../../images/Logo.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
 
 const Header = ({ itemsCount }) => {
     return (
@@ -18,13 +19,15 @@ const Header = ({ itemsCount }) => {
                 <FontAwesomeIcon icon={faBars} />
             </label>
             <div className='navigations'>
-                <Link to="/shop">Shop</Link>
-                <Link to="/orders">Orders</Link>
-                <Link to="/inventory">Inventory</Link>
-                <Link to="/about">About</Link>
+                <CustomLink to="/">Shop</CustomLink>
+                <CustomLink to="/orders">Orders</CustomLink>
+                <CustomLink to="/inventory">Inventory</CustomLink>
+                <CustomLink to="/about">About</CustomLink>
                 <p className='cart-btn'>
-                    <FontAwesomeIcon className="icon" icon={faCartShopping} />
-                    <Link to='/orders'> <sup style={{ fontSize: '16px', marginLeft: '5px' }}>{itemsCount}</sup></Link>
+                    <Link to='/orders'>
+                        <FontAwesomeIcon className="icon" icon={faCartShopping} />
+                        <sup style={{ fontSize: '16px', marginLeft: '5px' }}>{itemsCount}</sup>
+                    </Link>
                 </p>
             </div>
         </nav>
