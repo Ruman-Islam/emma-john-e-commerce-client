@@ -8,6 +8,9 @@
     padding: 20px;
     border-radius: 10px;
     width: 400px;
+    height: 50vh;
+    position: sticky;
+    top: 200px;
 }
 
 

@@ -1,6 +1,12 @@
+/* .cart {
+   position: sticky;
+   top: 0;
+} */
+
 .review-link-btn {
    text-decoration: none;
 }
+
 
 @media screen and (max-width: 1280px) {
    .cart button {
