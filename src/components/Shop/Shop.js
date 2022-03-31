@@ -1,14 +1,15 @@
 /* eslint-disable jsx-a11y/heading-has-content */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect, useState } from 'react';
-import { addToLocalStorage, deleteShoppingCart, getStoredCart } from '../../utilities/utilitiesFunctions';
+import useCart from '../../hooks/useCart';
+import useProducts from '../../hooks/useProducts';
+import { addToLocalStorage, deleteShoppingCart } from '../../utilities/utilitiesFunctions';
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 
 const Shop = ({ setItemsCount }) => {
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [products] = useProducts();
+    const [cart, setCart] = useCart(products);
 
     const handleAddToCart = (selectedProduct) => {
         let newCart = [];
@@ -30,26 +31,6 @@ const Shop = ({ setItemsCount }) => {
         setCart(emptyCart);
         deleteShoppingCart();
     }
-
-    useEffect(() => {
-        const storedCart = getStoredCart();
-        const savedProduct = [];
-        for (const id in storedCart) {
-            const addedProduct = products.find(product => product.id === id);
-            if (addedProduct) {
-                const quantity = storedCart[id]
-                addedProduct.quantity = quantity;
-                savedProduct.push(addedProduct);
-            }
-        }
-        setCart(savedProduct);
-    }, [products])
-
-    useEffect(() => {
-        fetch('https://raw.githubusercontent.com/Ruman-Islam/emma-john-e-commerce/main/public/products.json')
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
 
     return (
         <div className='shop-container'>
