@@ -1,3 +1,7 @@
+.review-link-btn {
+   text-decoration: none;
+}
+
 @media screen and (max-width: 1280px) {
    .cart button {
     font-size: 10px;

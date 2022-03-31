@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import './Cart.css';
 import { handleDeleteCart } from '../../utilities/utilitiesFunctions';
+import { Link } from 'react-router-dom';
 
-const Cart = ({ setItemsCount, cart, setCart }) => {
+const Cart = ({ setItemsCount, cart, setCart, children: { props: { children } = {} } = {} }) => {
 
     let totalPrice = 0;
     let totalShippingCost = 0;
@@ -30,10 +31,12 @@ const Cart = ({ setItemsCount, cart, setCart }) => {
                     Clear Cart
                     <FontAwesomeIcon className='icon' icon={faTrashCan} />
                 </button>
-                <button className='review-btn'>
-                    Review Order
-                    <FontAwesomeIcon className='icon' icon={faArrowRight} />
-                </button>
+                <Link to={children === 'Review Order' ? '/orders' : '/inventory'} className='review-link-btn'>
+                    <button className='review-btn'>
+                        {children}
+                        <FontAwesomeIcon className='icon' icon={faArrowRight} />
+                    </button>
+                </Link>
             </div>
         </div>
     );

@@ -27,11 +27,9 @@ const Orders = ({ setItemsCount }) => {
                 }
             </div>
             <div className="cart-detail-container">
-                <Cart
-                    setItemsCount={setItemsCount}
-                    cart={cart}
-                    setCart={setCart}
-                />
+                <Cart setItemsCount={setItemsCount} cart={cart} setCart={setCart}>
+                    <p>Proceed Order</p>
+                </Cart>
             </div>
         </div>
     );
