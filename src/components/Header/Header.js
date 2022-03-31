@@ -22,9 +22,9 @@ const Header = ({ itemsCount }) => {
                 <Link to="/orders">Orders</Link>
                 <Link to="/inventory">Inventory</Link>
                 <Link to="/about">About</Link>
-                <p className='cart-btn' data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <p className='cart-btn'>
                     <FontAwesomeIcon className="icon" icon={faCartShopping} />
-                    <sup style={{ fontSize: '16px', marginLeft: '5px' }}>{itemsCount}</sup>
+                    <Link to='/orders'> <sup style={{ fontSize: '16px', marginLeft: '5px' }}>{itemsCount}</sup></Link>
                 </p>
             </div>
         </nav>

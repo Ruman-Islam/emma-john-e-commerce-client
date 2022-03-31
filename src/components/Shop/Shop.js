@@ -42,19 +42,6 @@ const Shop = ({ setItemsCount }) => {
                     <p>Review Order</p>
                 </Cart>
             </div>
-            <div className="offCanvas">
-                <div className="offcanvas offcanvas-start w-100" tabIndex="1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-                    <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasExampleLabel"></h5>
-                        <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div className="offcanvas-body">
-                        <Cart setItemsCount={setItemsCount} cart={cart} setCart={setCart}>
-                            <p>Review Order</p>
-                        </Cart>
-                    </div>
-                </div>
-            </div>
         </div>
     );
 };
