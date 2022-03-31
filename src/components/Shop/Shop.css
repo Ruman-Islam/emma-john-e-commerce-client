@@ -34,7 +34,7 @@
 .clear-btn, .review-btn {
     display: block;
     margin: 16px 0;
-    width: 300px;
+    width: 100%;
     border: 0;
     padding: 10px 0;
     border-radius: 5px;
