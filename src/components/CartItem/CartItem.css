@@ -17,14 +17,41 @@
     width: 20%;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: 40px;
-    color: #D20303;
 }
+
+.remove-item-btn-container  button {
+    color: #D20303;
+    border: 0;
+    background-color: white;
+}
+
 .cart-item .item-img-container img {
     height: 100px;
 }
 
-
 .detail-title {
     margin: 0;
+}
+
+@media screen and (max-width: 1280px) {
+    .cart-item {
+        width: 100%;
+    }
+    .item-img-container {
+        width: 30%;
+    }
+    
+    .item-detail-container {
+       width: 80%;
+    }
+    
+    .remove-item-btn-container {
+        width: 10%;
+        font-size: 30px;
+    }
+    .detail-title {
+        margin-left: 10px;
+    }
 }
