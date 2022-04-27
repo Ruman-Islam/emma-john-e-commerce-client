@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Shipment = () => {
     const [user] = useAuthState(auth);
-    const [cart] = useCart();
+    const { cart } = useCart();
     const [address, setAddress] = useState({ value: "", error: "" });
     const [phone, setPhone] = useState({ value: "", error: "" });
     const navigate = useNavigate();

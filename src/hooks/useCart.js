@@ -4,6 +4,7 @@ import { getStoredCart } from "../utilities/utilitiesFunctions";
 
 const useCart = () => {
     const [cart, setCart] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
         const storedCart = getStoredCart();
@@ -11,6 +12,7 @@ const useCart = () => {
         const keys = Object.keys(storedCart);
 
         const getCart = async () => {
+            setIsLoading(true);
             const url = 'https://tranquil-beach-24557.herokuapp.com/productByKeys';
             const { data } = await axios.post(url, keys)
             for (const id in storedCart) {
@@ -22,11 +24,12 @@ const useCart = () => {
                 }
             }
             setCart(savedProduct);
+            setIsLoading(false);
         }
         getCart();
     }, [])
 
-    return [cart, setCart];
+    return { cart, setCart, isLoading };
 };
 
 export default useCart;
