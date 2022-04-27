@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { handleDeleteCart } from '../../utilities/utilitiesFunctions';
 import { useNavigate } from 'react-router-dom';
+import { UseCartItemsCount } from '../../App';
 import './Cart.css';
 
-const Cart = ({ setItemsCount, cart, setCart, children: { props: { children } = {} } = {} }) => {
+const Cart = ({ cart, setCart, children: { props: { children } = {} } = {} }) => {
+    const { setItemsCount } = useContext(UseCartItemsCount);
     const navigate = useNavigate();
 
     let totalPrice = 0;
@@ -18,7 +20,9 @@ const Cart = ({ setItemsCount, cart, setCart, children: { props: { children } = 
     }
     const tax = parseFloat((totalPrice * 0.1).toFixed(2));
     const grandTotal = totalPrice + totalShippingCost + tax;
+
     setItemsCount(quantity);
+
     return (
         <div className='cart'>
             <h4>Order Summary</h4>
@@ -36,7 +40,7 @@ const Cart = ({ setItemsCount, cart, setCart, children: { props: { children } = 
                     children === 'Review Order' ? (
                         navigate('/orders')
                     ) : (
-                        navigate('/inventory')
+                        navigate('/shipment')
                     )
                 }} className='review-btn'>
                     {children}

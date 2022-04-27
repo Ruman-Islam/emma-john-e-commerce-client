@@ -35,6 +35,20 @@ nav {
   color: orange;
 }
 
+.sign-out-btn {
+  display: flex;
+  flex-direction: column;
+}
+
+nav button {
+  background-color: orange;
+  color: white;
+  padding: 0 20px;
+  border: 0;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
 @media (max-width: 1280px) {
   nav .navigations a {
     margin-right: 0;
