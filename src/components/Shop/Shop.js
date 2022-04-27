@@ -57,10 +57,9 @@ const Shop = () => {
     };
 
     return (
-        <>
-            {isLoading ? <Spinner />
-                :
-                <div className='shop-container'>
+        <div className='shop-container'>
+            <>
+                {isLoading ? <Spinner /> :
                     <>
                         <div className="product-container container">
                             {
@@ -71,38 +70,38 @@ const Shop = () => {
                                 />)
                             }
                         </div>
-                        <div className="cart-container">
-                            <Cart setItemsCount={setItemsCount} cart={cart} setCart={setCart}>
-                                <p>Review Order</p>
-                            </Cart>
-                        </div>
-                    </>
-                    {isLoading ||
-                        <div className='page-btn'>
-                            <div>
-                                {
-                                    [...Array(pageCount).keys()]
-                                        .map(pageNumber =>
-                                            <button key={pageNumber} className={page === pageNumber ? 'selected-btn' : ''}
-                                                onClick={() => setPage(pageNumber)}>
-                                                {pageNumber + 1}
-                                            </button>
-                                        )
-                                }
-                            </div>
-                            <div className='selected-page-btn'>
-                                <select defaultValue="10"
-                                    onChange={(e) => setSize(e.target.value)}>
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                    <option value="15">15</option>
-                                    <option value="20">20</option>
-                                </select>
-                            </div>
-                        </div>}
+                    </>}
+
+                <div className="cart-container">
+                    <Cart setItemsCount={setItemsCount} cart={cart} setCart={setCart}>
+                        <p>Review Order</p>
+                    </Cart>
                 </div>
-            }
-        </>
+            </>
+            {isLoading ||
+                <div className='page-btn'>
+                    <div>
+                        {
+                            [...Array(pageCount).keys()]
+                                .map(pageNumber =>
+                                    <button key={pageNumber} className={page === pageNumber ? 'selected-btn' : ''}
+                                        onClick={() => setPage(pageNumber)}>
+                                        {pageNumber + 1}
+                                    </button>
+                                )
+                        }
+                    </div>
+                    <div className='selected-page-btn'>
+                        <select defaultValue="10"
+                            onChange={(e) => setSize(e.target.value)}>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>}
+        </div>
     );
 };
 
